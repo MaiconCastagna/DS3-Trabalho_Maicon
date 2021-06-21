@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+    {{#if session.loggedIn}}
+    <h2>Olá, {{session.maker.username}}</h2>
+    {{/if}}
+    <h1 class="display-4 fw-normal">Sanctum</h1>
+    <p class="fs-5 text-muted">Aqui você faz umas par de coisa!</p>
+    {{#if session.loggedIn}}
+    <p><a class="btn btn-danger" href="/makers/maker_signin">Meu espaço Maker</a></p>
+    {{/if}}
+  </div>
+</div>
+
+<hr class="featurette-divider" style="padding-top: 40px; color: white;">
+
+<h2 style="padding-left: 30px;">Ferramentas:</h2>
+
+<div class="container marketing">
+  <div class="row">
+
+    <div class="col-lg-4">
+      <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg"
+        role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false">
+        <title>Placeholder</title>
+        <rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
+      </svg>
+
+      <h2>Maker Project</h2>
+      <p>Torne-se um Maker, organizando de pequenas ideias a grandes projetos</p>
+      <p><a class="btn btn-secondary" href="/makers/mkhome">Ver Mais</a></p>
+    </div>
+
+    <div class="col-lg-4">
+      <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg"
+        role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false">
+        <title>Placeholder</title>
+        <rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
+      </svg>
+
+      <h2>Algo Cena //(TO-DO)</h2>
+      <p>Tá aí um tipo de rifa/sorteio/consórcio que provavelmente é ilegal!</p>
+      <p><a class="btn btn-secondary" href="#">Ver Mais</a></p>
+    </div>
+  </div>
+
+</div>
