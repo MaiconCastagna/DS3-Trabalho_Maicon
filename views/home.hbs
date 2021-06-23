@@ -1,7 +1,11 @@
 <div class="container">
   <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
 
-    <h2>Olá, {{session.maker}}</h2>
+    {{#if session.loggedIn}}
+    <h2>Olá, {{session.maker.username}}</h2>
+    {{else}}
+    <h2>Olá, Pessoa!</h2>
+    {{/if}}
 
     <h1 class="display-4 fw-normal">Sanctum</h1>
     <p class="fs-5 text-muted">Aqui você faz umas par de coisa!</p>

@@ -23,7 +23,7 @@ app.use(session({
   secret: 'senha',
   name: 'roamming_discard',
   cookie: {
-    secure: true,
+    secure: false,
     expires: expiraCookie
   }
 }));
