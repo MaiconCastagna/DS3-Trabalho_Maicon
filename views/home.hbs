@@ -1,13 +1,10 @@
 <div class="container">
   <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
-    {{#if session.loggedIn}}
-    <h2>Olá, {{session.maker.username}}</h2>
-    {{/if}}
+
+    <h2>Olá, {{session.maker}}</h2>
+
     <h1 class="display-4 fw-normal">Sanctum</h1>
     <p class="fs-5 text-muted">Aqui você faz umas par de coisa!</p>
-    {{#if session.loggedIn}}
-    <p><a class="btn btn-danger" href="/makers/maker_signin">Meu espaço Maker</a></p>
-    {{/if}}
   </div>
 </div>
 

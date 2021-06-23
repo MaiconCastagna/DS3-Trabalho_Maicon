@@ -18,7 +18,7 @@
 
     <ul class="nav nav-pills">
       <li class="nav-item"><a href="/" class="nav-link active" aria-current="page">Home</a></li>
-      {{#if session.loggedIn}}
+      {{#if session.maker}}
       {{!-- <li class="nav-item"><a href="/users" class="nav-link">Usuários</a></li> --}}
       <li class="nav-item"><a href="/auth/logout" class="nav-link">Sair</a></li>
       {{else}}

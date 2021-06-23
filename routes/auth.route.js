@@ -24,7 +24,6 @@ router.post('/login', async (req, res) => {
     if (user.password === req.body.password) {
       req.session.loggedIn = true;
       req.session.user = user.get({ plain: true });
-      console.log(req.session.loggedIn);
       return res.redirect('/');
     }
   }
@@ -34,14 +33,20 @@ router.post('/login', async (req, res) => {
 
 });
 
+//-----------------------------------------------------------------
+// Ambos
+
 router.get('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.loggedIn = false;
+    req.session.maker = null;
     req.session.user = null;
   }
 
   return res.redirect('/');
 })
+
+//-----------------------------------------------------------------
 
 router.post('/register', async (req, res) => {
   const user = req.body;
@@ -91,11 +96,13 @@ router.post('/login_maker', async (req, res) => {
     if (maker.password === req.body.password) {
       req.session.loggedIn = true;
       req.session.maker = maker.get({ plain: true });
-      return res.render('maker', { maker });
+      req.session.makerId = maker.id;
+      id = maker.id;
+      return res.redirect('/makers/maker/' + id);
     }
   }
   return res.status(404).render('maker_signin', {
-    errorMessage: 'Credenciais inválidas'
+    errorMessage: 'Credenciais inválidas!'
   });
 
 });

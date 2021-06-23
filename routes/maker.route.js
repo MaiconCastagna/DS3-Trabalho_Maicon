@@ -14,12 +14,17 @@ const md_redirect = require('../middlewares/md_redirect');
 router.get('/mkhome', async (req, res) => {
     const makers = await Maker.findAll();
     res.render('home_makers', { makers });
-    req.session.loggedIn = true;
 });
 
-router.get('/maker', async (req, res) => {
-    let maker = await Maker.create(req.body);
-    return res.send(maker);
+router.get('/maker/:Id', async (req, res) => {
+    const makerId = req.params.Id;
+    const maker = await Maker.findOne({
+        where: {
+            id: makerId
+        }
+    });
+    console.log(req.session.loggedIn);
+    return res.render('maker', { maker });
 });
 
 router.get('/maker_signup', async (req, res) => {
@@ -27,9 +32,9 @@ router.get('/maker_signup', async (req, res) => {
     res.render('maker_signup', { makers })
 });
 
-router.get('/maker_signin', md_redirect, async (req, res) => {
+router.get('/maker_signin', async (req, res) => {
     const makers = await Maker.findAll();
-    res.render('maker_signin', { makers })
+    res.render('maker_signin', { makers });
 });
 
 router.get('/:id/vis', md_redirect, async (req, res) => {
@@ -40,6 +45,7 @@ router.get('/:id/vis', md_redirect, async (req, res) => {
         }
     });
     res.render('maker_visualizar', { maker })
+    console.log(req.session.loggedIn);
 });
 
 //-----------------------------------------------------------
@@ -55,8 +61,8 @@ router.get('/', async (req, res) => {
     return res.send(makers);
 });
 
-router.get('/:makerId', async (req, res) => {
-    const id = req.params.makerId;
+router.get('/:Id', async (req, res) => {
+    const id = req.params.Id;
     const maker = await Maker.findByPk(id);
     if (!maker) {
         return res.status(404).send('Maker não encontrado!');
@@ -64,8 +70,8 @@ router.get('/:makerId', async (req, res) => {
     return res.render('maker', { maker });
 });
 
-router.get('/:makerId/edit', async (req, res) => {
-    const id = req.params.makerId;
+router.get('/:Id/edit', async (req, res) => {
+    const id = req.params.Id;
     const maker = await Maker.findByPk(id);
 
     if (!maker) {
