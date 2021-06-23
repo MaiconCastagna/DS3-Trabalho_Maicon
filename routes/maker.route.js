@@ -21,12 +21,16 @@ router.get('/maker_edit', async (req, res) => {
     res.render('maker_edit', { maker });
 });
 
+router.get('/quem_sou', async (req, res) => {
+    res.render('quem_sou')
+});
+
 router.get('/mkhome', async (req, res) => {
     const makers = await Maker.findAll();
     res.render('home_makers', { makers });
 });
 
-router.get('/maker/:Id', async (req, res) => {
+router.get('/maker/:Id', md_redirect, async (req, res) => {
     const makerId = req.params.Id;
     const maker = await Maker.findOne({
         where: {

@@ -1,6 +1,11 @@
 function Project(sequelize, DataType) {
     const attributes = {
 
+        id: {
+            type: DataType.INTEGER,
+            autoIncrement: true,
+            primaryKey: true
+        },
         name: {
             type: DataType.STRING,
             allowNull: false
@@ -17,10 +22,14 @@ function Project(sequelize, DataType) {
             type: DataType.INTEGER,
             allowNull: false,
             references: {
-                model: 'maker'  ,
+                model: 'makers',
                 key: 'id'
             }
         },
+        privateStatus: {
+            type: DataType.INTEGER,
+            allowNull: true
+        }
 
     };
 

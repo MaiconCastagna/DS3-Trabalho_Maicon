@@ -1,0 +1,39 @@
+<div class="container">
+
+    <div class="text-center" style="padding-top: 50px;">
+        <form method="POST" action="/projects/" class="form-signin">
+            <h1 class="h3 mb-3 font-weight-normal">Criando um Projeto...</h1>
+
+            <label for="name" class="sr-only">Nome do Projeto</label>
+            <input type="text" name="name" placeholder="Nome do Projeto" class="form-control">
+            <br>
+
+            <label for="image" class="sr-only">Diretório da Imagem do projeto (não usado, escreva qualquer coisa)</label>
+            <input type="text" name="image" class="form-control"
+                placeholder="Diretório da Imagem do projeto (não usado)">
+            <br>
+
+            <label for="description" class="sr-only">Nome do Projeto</label>
+            <input type="text" name="description" placeholder="Descrição do Projeto" class="form-control">
+            <br>
+
+            <label for="privateStatus" class="sr-only">Nome do Projeto</label>
+            <input type="number" name="privateStatus" placeholder="0 - para deixar privado e 1 - para deixar público" class="form-control">
+            <br>
+
+            <label for="authorId" class="sr-only">Nome do Projeto</label>
+            <input type="number" name="authorId" value="{{idMaker}}" placeholder="{{idMaker}}" class="form-control" readonly>
+            <br>
+
+
+            <p class="text-danger">{{errorMessage}}</p>
+
+            <div class="checkbox mb-3">
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Salvar Projeto</button>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
