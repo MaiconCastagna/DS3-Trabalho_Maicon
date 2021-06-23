@@ -9,7 +9,6 @@ const hbs = require('hbs');
 
 const AuthRoute = require('./routes/auth.route');
 const IndexRoute = require('./routes/index.route');
-const UserRoutes = require('./routes/user.route');
 const MakerRoutes = require('./routes/maker.route');
 
 //----------------------------------------------------------
@@ -50,7 +49,6 @@ hbs.registerHelper('calcula-data', (date) => {
 
 app.use('/', IndexRoute);
 app.use('/auth', AuthRoute);
-app.use('/users', UserRoutes);
 app.use('/makers', MakerRoutes);
 
 //----------------------------------------------------------
