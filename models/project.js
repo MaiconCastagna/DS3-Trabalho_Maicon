@@ -15,7 +15,11 @@ function Project(sequelize, DataType) {
         },
         authorId: {
             type: DataType.INTEGER,
-            allowNull: false
+            allowNull: false,
+            references: {
+                model: 'maker'  ,
+                key: 'id'
+            }
         },
 
     };

@@ -14,7 +14,7 @@ router.post('/register_maker', async (req, res) => {
 
   try {
     const createdMaker = await Maker.create(maker);
-    console.log('conta Maker criada: ', createdMaker);
+    console.log('conta Maker criada: ', createdMaker.toJSON());
 
     return res.redirect('/auth/maker_signin');
   } catch (e) {

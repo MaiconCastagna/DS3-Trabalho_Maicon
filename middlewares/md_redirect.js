@@ -1,7 +1,7 @@
 
 module.exports = async function (req, res, next) {
 
-    console.log('md_redirect', req.session.loggedIn);
+    console.log('md_redirect');
 
     if (req.session.loggedIn) {
         return next();

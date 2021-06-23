@@ -1,6 +1,11 @@
 function Maker(sequelize, DataType) {
     const attributes = {
 
+        id: {
+            type: DataType.INTEGER,
+            autoIncrement: true,
+            primaryKey: true
+        },
         username: {
             type: DataType.STRING,
             allowNull: false
@@ -12,7 +17,7 @@ function Maker(sequelize, DataType) {
     };
 
     const options = {};
-
+    
     return sequelize.define('maker', attributes, options);
 }
 

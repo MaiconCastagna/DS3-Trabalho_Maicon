@@ -9,7 +9,8 @@ const sequelize = new Sequelize({
 });
 
 // Carrega os models existentes!
-sequelize.Maker = sequelize.import('./maker.js')
+sequelize.Maker = sequelize.import('./maker.js');
+sequelize.Project = sequelize.import('./project.js');
 
 // Sincronize/crie o banco de dados
 sequelize.sync();
