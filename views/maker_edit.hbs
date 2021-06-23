@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h4 class="mb-3">Editando o Maker: {{maker.username}}</h4>
+      <form class="needs-validation" novalidate="" action="/makers/{{maker.id}}/edit" method="post">
+        <div class="row g-3">
+          <div class="col-sm-6">
+            <label for="firstName" class="form-label">Nome</label>
+            <input type="text" class="form-control" name="username" placeholder="" value="{{maker.username}}" required="">
+          </div>
+
+          <div class="col-sm-6">
+            <label for="lastName" class="form-label">Senha</label>
+            <input type="number" class="form-control" name="password" placeholder="" value="{{maker.password}}" required="">
+          </div>
+        </div>
+
+        <hr class="my-4">
+
+        <button class="w-100 btn btn-primary btn-lg" type="submit">Salvar</button>
+      </form>
+    </div>
+  </div>
+</div>
